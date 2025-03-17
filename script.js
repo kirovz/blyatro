@@ -69,12 +69,17 @@ class Player {
     return this.hand.map((card) => card.toString()).join(", ");
   }
 
-  // Метод для отображения карт в HTML
-  displayHandInHTML() {
-    return this.hand
-      .map((card) => `<div class="card-slot">${card.toString()}</div>`)
-      .join("");
-  }
+//+
+  renderHand() {//+
+    const handElement = document.getElementById('player-hand');//+
+    handElement.innerHTML = ''; // Очищаем текущую руку//+
+    this.hand.forEach(card => {//+
+      const cardElement = document.createElement('div');//+
+      cardElement.className = 'card-slot';//+
+      cardElement.textContent = `${card.rank}${card.suit}`;//+
+      handElement.appendChild(cardElement);//+
+    });//+
+  }//+
 }
 
 class Game {
@@ -96,6 +101,7 @@ class Game {
     }
     const card = this.deck.dealCard();
     this.player.addCard(card);
+    this.player.renderHand();
     return card;
   }
 
@@ -116,5 +122,5 @@ window.onload = () => {
 // Обработчик события для кнопки раздачи карт
 document.getElementById("deal-button").addEventListener("click", () => {
   game.startGame();
-  game.displayPlayerHand();
 });
+
