@@ -1,0 +1,258 @@
+/* Сброс всех стандартных отступов */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Общие стили */
+body {
+    font-family: "Orbitron", sans-serif;
+    background-color: #1a1a1a;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+/* Заголовок игры */
+.game-header h1 {
+    font-size: 2.5rem;
+    color: #ffcc00;
+    text-shadow: 0 0 5px rgba(255, 204, 0, 0.7);
+    margin-bottom: 20px;
+}
+
+/* Контейнер игры */
+.game-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1500px;
+    gap: 10px;
+}
+
+/* Игровое поле */
+.game-field {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 10px;
+    width: 900px;
+    height: 550px;
+    flex-grow: 1;
+    border: 1px solid wheat;
+    border-radius: 5px;
+}
+
+/* Зоны игры */
+.config-field {
+    border: 1px solid wheat;
+    border-radius: 5px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    width: 180px;
+}
+
+.button-settings {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.bonus-field {
+    border: 1px solid wheat;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    width: 300px;
+}
+
+/* Зона мод карт */
+.mod-cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.deck {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.tag {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+/* Зона джокеров, игрового коврика и руки */
+.hunds-game,
+.playmat,
+.jokers {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+/* Информационное поле */
+.quarter,
+.count,
+.hunds-discards,
+.current-round {
+    /* width: 70px;
+    height: 50px; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+/* Информационное поле (внутри)*/
+.number-quarter,
+.points-quarter,
+.round-score,
+.points-fishki,
+.points-multiplay,
+.bank,
+.hunds,
+.discards,
+.ante,
+.round {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    border-left: 1px solid #fff;
+}
+
+/* Карты */
+.card-slot {
+    width: 120px;
+    height: 170px;
+    background: linear-gradient(145deg, #3a3a3a, #2b2b2b);
+    border-radius: 8px;
+    box-shadow: 4px 4px 10px rgba(0, 3, 0, 0.6);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 1.5rem;
+    color: #fff;
+    text-transform: uppercase;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+/* Анимация при наведении */
+.card-slot:hover {
+    transform: scale(1.05);
+    box-shadow: 6px 6px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Анимация появления */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card-slot {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Подсветка активных карт */
+.card-active {
+    border: 3px solid #f39c12;
+    box-shadow: 0 0 15px #f39c12;
+}
+
+/* Игровой подвал */
+.game-footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.sort {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 15px; /* Добавляем отступы */
+    position: relative;
+    text-align: center;
+    gap: 10px; /* Расстояние между элементами */
+}
+
+fieldset {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 5px; /* Добавляем отступы */
+    position: relative;
+    text-align: center;
+    gap: 10px; /* Расстояние между элементами */
+}
+
+legend {
+    display: block;
+    padding: 0 0.5em;
+    margin-left: 5%;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Кнопки */
+.play-hand-btn,
+.discard-btn,
+.info-btn,
+.options-btn,
+.rank-btn,
+.suit-btn {
+    background-color: #f39c12;
+    color: white;
+    padding: 5px 5px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.info-btn:hover,
+.options-btn:hover,
+.rank-btn:hover,
+.suit-btn:hover,
+.play-hand-btn:hover,
+.discard-btn:hover {
+    background-color: #e67e22;
+}

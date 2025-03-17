@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Game</title>
+    </head>
+    <body>
+        <!-- Заголовок игры -->
+        <div class="game-header">
+            <h1>БЛЯ_тро - Карточная игра</h1>
+        </div>
+        <div class="game-container">
+            <!-- Поле информации -->
+            <div class="config-field">
+                <div class="quarter">
+                    <fieldset>
+                        <legend>quarter</legend>
+                        <div class="number-quarter">1</div>
+                        <div class="points-quarter">1200</div>
+                    </fieldset>
+                </div>
+                <fieldset>
+                    <legend>score</legend>
+                    <div class="round-score">1200</div>
+                </fieldset>
+                <div class="count">
+                    <fieldset>
+                        <legend>count</legend>
+                        <div class="points-fishki">20</div>
+                        <div class="points-multiplay">30</div>
+                    </fieldset>
+                </div>
+                <div class="hunds-discards">
+                    <fieldset>
+                        <legend>current</legend>
+                        <div class="hunds">4</div>
+                        <div class="discards">4</div>
+                    </fieldset>
+                </div>
+                <fieldset>
+                    <legend>bank</legend>
+                    <div class="bank">10</div>
+                </fieldset>
+                <div class="current-round">
+                    <fieldset>
+                        <legend>round</legend>
+                        <div class="ante">1/8</div>
+                        <div class="round">1</div>
+                    </fieldset>
+                </div>
+            </div>
+
+            <!-- Игровое поле -->
+            <div class="game-field">
+                <div class="jokers">
+                    <div class="card-slot">Карточка джокер</div>
+                    <div class="card-slot">Карточка джокер</div>
+                </div>
+                <div class="playmat">
+                    <div class="card-slot">Карточка на поле 1</div>
+                    <div class="card-slot">Карточка на поле 2</div>
+                    <div class="card-slot">Карточка на поле 3</div>
+                    <div class="card-slot">Карточка на поле 4</div>
+                </div>
+                <div class="hunds-game">
+                    <!-- <div class="card-slot">Карточка в руке 1</div>
+                    <div class="card-slot">Карточка в руке 2</div> -->
+                </div>
+            </div>
+
+            <!-- Дополнительное поле -->
+            <div class="bonus-field">
+                <div class="mod-cards">
+                    <div class="card-slot">Мод. карта 1</div>
+                    <div class="card-slot">Мод. карта 2</div>
+                </div>
+                <div class="tag">
+                    <div class="card-slot">Тег</div>
+                    <div class="card-slot">Тег</div>
+                </div>
+                <div class="deck">
+                    <div class="card-slot">Колода</div>
+                </div>
+            </div>
+        </div>
+        <!-- Футер с кнопкой -->
+        <div class="game-footer">
+            <div class="button-settings">
+                <fieldset>
+                    <legend>settings</legend>
+                    <button class="info-btn">info</button>
+                    <button class="options-btn">options</button>
+                </fieldset>
+            </div>
+            <div class="sort">
+                <fieldset>
+                    <legend>sort</legend>
+                    <button class="rank-btn">Возрастание</button>
+                    <button class="suit-btn">По масти</button>
+                </fieldset>
+            </div>
+            <fieldset>
+                <legend>game</legend>
+                <button class="play-hand-btn">Играть руку</button>
+                <button class="discard-btn">Сброс</button>
+            </fieldset>
+            <fieldset>
+                <legend>game</legend>
+                <button class="play-hand-btn" id="deal-button">
+                    Раздать карты
+                </button>
+                <button class="discard-btn">Сброс</button>
+            </fieldset>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
