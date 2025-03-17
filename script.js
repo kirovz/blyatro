@@ -79,16 +79,13 @@ class Player {
 
 class Game {
   constructor(playerName) {
-    // Создание колоды
     this.deck = new Deck();
-    // Создание игрока
     this.player = new Player(playerName);
   }
 
   startGame() {
     // Перемешивание колоды
     this.deck.shuffle();
-    // Раздача карты игроку
     // Количество карт на раздаче
     let counterCardsForHand = 3;
     for (let i = 0; i < counterCardsForHand; i++) {
