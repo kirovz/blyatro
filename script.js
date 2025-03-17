@@ -70,16 +70,16 @@ class Player {
   }
 
 //+
-  renderHand() {//+
-    const handElement = document.getElementById('player-hand');//+
-    handElement.innerHTML = ''; // Очищаем текущую руку//+
-    this.hand.forEach(card => {//+
-      const cardElement = document.createElement('div');//+
-      cardElement.className = 'card-slot';//+
-      cardElement.textContent = `${card.rank}${card.suit}`;//+
-      handElement.appendChild(cardElement);//+
-    });//+
-  }//+
+  renderHand() {
+    const handElement = document.getElementById('player-hand');
+    handElement.innerHTML = ''; // Очищаем текущую руку
+    this.hand.forEach(card => {
+      const cardElement = document.createElement('div');
+      cardElement.className = 'card-slot';
+      cardElement.textContent = `${card.rank}${card.suit}`;
+      handElement.appendChild(cardElement);
+    });
+  }
 }
 
 class Game {
@@ -91,8 +91,8 @@ class Game {
   startGame() {
     // Перемешивание колоды
     this.deck.shuffle();
-    // Количество карт на раздаче
-    let counterCardsForHand = 3;
+    // Количество карт на раздаче (плюс один из-за рендера)
+    let counterCardsForHand = 2;
     for (let i = 0; i < counterCardsForHand; i++) {
       const card = this.deck.dealCard();
       if (card) {
@@ -116,7 +116,6 @@ const game = new Game("Slavichois");
 // Вызываем startGame при загрузке страницы, чтобы раздать начальную руку
 window.onload = () => {
   game.startGame();
-  game.displayPlayerHand();
 };
 
 // Обработчик события для кнопки раздачи карт
